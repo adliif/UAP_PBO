@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="projectUAP.jnlp">
+  <information>
+    <title>projectUAP</title>
+    <vendor>adlii</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="lib\mysql-connector-j-8.0.31.jar" size="2515519" download="eager" />
+    <jar href="projectUAP.jar" size="53161" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="GUI.Main"  name="projectUAP" />
+  <update check="always"/>
+</jnlp>

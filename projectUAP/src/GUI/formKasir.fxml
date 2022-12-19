@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.formKasirController">
+   <children>
+      <TabPane prefHeight="406.0" prefWidth="604.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Makanan">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="-1.0" layoutY="-1.0" prefHeight="378.0" prefWidth="604.0" style="-fx-background-color: #466ec6;">
+                           <children>
+                              <AnchorPane prefHeight="368.0" prefWidth="163.0" style="-fx-background-color: #2a3651;">
+                                 <children>
+                                    <Label layoutX="30.0" layoutY="14.0" text="Sistem Kasir" textFill="#bca325">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="nama_makanan" layoutX="19.0" layoutY="66.0" prefHeight="25.0" prefWidth="120.0" promptText="Nama" />
+                                    <TextField fx:id="harga_makanan" layoutX="19.0" layoutY="97.0" prefHeight="25.0" prefWidth="120.0" promptText="Harga" />
+                                    <TextField fx:id="jumlah_makanan" layoutX="19.0" layoutY="128.0" prefHeight="25.0" prefWidth="120.0" promptText="Jumlah" />
+                                    <TextField fx:id="diskon_makanan" layoutX="19.0" layoutY="159.0" prefHeight="25.0" prefWidth="120.0" promptText="Diskon" />
+                                    <TextField fx:id="id_makanan" layoutX="19.0" layoutY="191.0" prefHeight="25.0" prefWidth="120.0" promptText="ID" />
+                                    <TextField fx:id="dayaTahan_Makanan" layoutX="19.0" layoutY="222.0" prefHeight="25.0" prefWidth="120.0" promptText="Daya Tahan" />
+                                    <MenuButton layoutX="46.0" layoutY="264.0" mnemonicParsing="false" text="Pilihan">
+                                      <items>
+                                        <MenuItem fx:id="btnTambahMakanan" mnemonicParsing="false" onAction="#handleAddProdukMakanan" text="Tambah" />
+                                        <MenuItem fx:id="btnHapusMakanan" mnemonicParsing="false" onAction="#handleDeleteProdukMakanan" text="Hapus" />
+                                      </items>
+                                    </MenuButton>
+                                 </children>
+                              </AnchorPane>
+                              <VBox prefHeight="378.0" prefWidth="443.0">
+                                 <children>
+                                    <AnchorPane prefHeight="263.0" prefWidth="445.0">
+                                       <children>
+                                          <TableView fx:id="tabelProdukMakanan" layoutX="-2.0" layoutY="-1.0" prefHeight="259.0" prefWidth="447.0">
+                                            <columns>
+                                              <TableColumn fx:id="kolomIDMakanan" prefWidth="34.0" text="ID" />
+                                              <TableColumn fx:id="kolomNamaMakanan" prefWidth="117.0" text="Nama" />
+                                                <TableColumn fx:id="kolomHargaMakanan" prefWidth="69.0" text="Harga" />
+                                                <TableColumn fx:id="kolomJumlahMakanan" prefWidth="69.0" text="Jumlah" />
+                                                <TableColumn fx:id="kolomDiskonMakanan" prefWidth="72.0" text="Diskon" />
+                                                <TableColumn fx:id="kolomDayaTahanMakanan" prefWidth="84.0" text="Daya Tahan" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                    <HBox prefHeight="115.0" prefWidth="445.0">
+                                       <children>
+                                          <AnchorPane prefHeight="115.0" prefWidth="299.0">
+                                             <children>
+                                                <TableView fx:id="tabelPenjualanMakanan" layoutX="-2.0" layoutY="-1.0" prefHeight="120.0" prefWidth="299.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="kolomNamaPenjualanMakanan" prefWidth="162.0" text="Nama" />
+                                                    <TableColumn fx:id="kolomJumlahPenjualanMakanan" prefWidth="71.0" text="Jumlah" />
+                                                      <TableColumn fx:id="kolomStokPenjualanMakanan" prefWidth="64.0" text="Stok" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="115.0" prefWidth="160.0" style="-fx-background-color: #2a3651;">
+                                             <children>
+                                                <TextField fx:id="txtIDPenjualanMakanan" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="52.0" promptText="Nama" />
+                                                <TextField fx:id="txtJumlahPenjualanMakanan" alignment="CENTER" layoutX="10.0" layoutY="44.0" prefHeight="25.0" prefWidth="52.0" promptText="Jumlah" />
+                                                <TextField fx:id="txtStokPenjualanMakanan" alignment="CENTER" layoutX="10.0" layoutY="78.0" prefHeight="25.0" prefWidth="52.0" promptText="Stok" />
+                                                <MenuButton layoutX="70.0" layoutY="28.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Pilihan">
+                                                  <items>
+                                                    <MenuItem fx:id="btnBeliMakanan" mnemonicParsing="false" onAction="#handleAddPenjualanMakanan" text="Beli" />
+                                                    <MenuItem fx:id="btnHapusPenjualanMakanan" mnemonicParsing="false" onAction="#handleDeletePenjualanMakanan" text="Hapus" />
+                                                  </items>
+                                                </MenuButton>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Barang">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="380.0" prefWidth="607.0">
+                     <children>
+                        <HBox layoutX="-1.0" layoutY="-1.0" prefHeight="378.0" prefWidth="604.0" style="-fx-background-color: #466ec6;">
+                           <children>
+                              <AnchorPane prefHeight="368.0" prefWidth="163.0" style="-fx-background-color: #2a3651;">
+                                 <children>
+                                    <Label layoutX="30.0" layoutY="14.0" text="Sistem Kasir" textFill="#bca325">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="data_penjualan" layoutX="31.0" layoutY="307.0" mnemonicParsing="false" onAction="#nextData" text="Data Penjualan" />
+                                    <TextField fx:id="nama_barang" layoutX="19.0" layoutY="50.0" prefHeight="25.0" prefWidth="120.0" promptText="Nama" />
+                                    <TextField fx:id="harga_barang" layoutX="19.0" layoutY="82.0" prefHeight="25.0" prefWidth="120.0" promptText="Harga" />
+                                    <TextField fx:id="jumlah_barang" layoutX="19.0" layoutY="113.0" prefHeight="25.0" prefWidth="120.0" promptText="Jumlah" />
+                                    <TextField fx:id="diskon_barang" layoutX="19.0" layoutY="145.0" prefHeight="25.0" prefWidth="120.0" promptText="Diskon" />
+                                    <TextField fx:id="barcode_barang" layoutX="19.0" layoutY="177.0" prefHeight="25.0" prefWidth="120.0" promptText="Barcode" />
+                                    <TextField fx:id="expired_barang" layoutX="19.0" layoutY="208.0" prefHeight="25.0" prefWidth="120.0" promptText="expired" />
+                                    <TextField fx:id="kategori_barang" layoutX="19.0" layoutY="239.0" prefHeight="25.0" prefWidth="120.0" promptText="Kategori" />
+                                    <MenuButton fx:id="pilihanBarang" layoutX="45.0" layoutY="272.0" mnemonicParsing="false" text="Pilihan" textOverrun="CENTER_ELLIPSIS">
+                                      <items>
+                                        <MenuItem fx:id="btnTambahBarang" mnemonicParsing="false" onAction="#handleAddProdukBarang" text="Tambah" />
+                                        <MenuItem fx:id="btnHapusBarang" mnemonicParsing="false" onAction="#handleDeleteProdukBarang" text="Hapus" />
+                                      </items>
+                                    </MenuButton>
+                                 </children>
+                              </AnchorPane>
+                              <VBox prefHeight="378.0" prefWidth="450.0">
+                                 <children>
+                                    <HBox prefHeight="198.0" prefWidth="442.0">
+                                       <children>
+                                          <AnchorPane prefHeight="195.0" prefWidth="306.0">
+                                             <children>
+                                                <TableView fx:id="tabelProdukBarangKategori" layoutY="-2.0" prefHeight="200.0" prefWidth="305.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="kolomKategori" prefWidth="308.0" text="Kategori" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="198.0" prefWidth="151.0" style="-fx-background-color: #2a3651;">
+                                             <children>
+                                                <TextField fx:id="kategori" alignment="CENTER" layoutX="13.0" layoutY="62.0" prefHeight="25.0" prefWidth="117.0" promptText="Kategori" />
+                                                <MenuButton fx:id="pilihanKategori" layoutX="37.0" layoutY="99.0" mnemonicParsing="false" text="Pilihan">
+                                                  <items>
+                                                    <MenuItem fx:id="btnTambahBarangKategori" mnemonicParsing="false" onAction="#handleAddProdukBarangKategori" text="Tambah" />
+                                                    <MenuItem fx:id="btnHapusBarangKategori" mnemonicParsing="false" onAction="#handleDeleteProdukBarangKategori" text="Hapus" />
+                                                  </items>
+                                                </MenuButton>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </HBox>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tabelProdukBarang" layoutY="-1.0" prefHeight="181.0" prefWidth="447.0">
+                                            <columns>
+                                                <TableColumn fx:id="kolomBarcodeBarang" prefWidth="67.0" text="Barcode" />
+                                              <TableColumn fx:id="kolomNamaBarang" prefWidth="117.0" text="Nama" />
+                                              <TableColumn fx:id="kolomHargaBarang" prefWidth="63.0" text="Harga" />
+                                                <TableColumn fx:id="kolomJumlahBarang" minWidth="5.0" prefWidth="64.0" text="Jumlah" />
+                                                <TableColumn fx:id="kolomDiskonBarang" minWidth="6.0" prefWidth="62.0" text="Diskon" />
+                                                <TableColumn fx:id="kolomExpiredBarang" prefWidth="72.0" text="Expired" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
