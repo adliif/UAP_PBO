@@ -9,5 +9,3 @@ Project akhir praktikum Pemrograman Berorientasi Objek (PBO)
 
  > Siska Hermayanti      
    NPM. 2117051023
-
-~~ Happy Ngoding
